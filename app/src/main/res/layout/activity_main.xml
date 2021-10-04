@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B1B2F"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/quotes"
+        android:layout_width="386dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textAlignment="gravity"
+        android:textColor="#513081"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="227dp"
+        android:layout_height="227dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="80dp"
+        android:background="#00FFFFFF"
+        android:foregroundTint="#FFEB3B"
+        android:indeterminateOnly="false"
+        android:max="5"
+        android:progressDrawable="@drawable/custom_progress"
+        android:rotation="270"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cigsCount"
+        android:layout_width="53dp"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:text="0"
+        android:textAlignment="gravity"
+        android:textColor="#6C7789"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="97dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="188dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/quotes"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/AddCig"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/roundedbutton"
+            android:clickable="true"
+            android:focusable="true"
+            android:foregroundTint="#070B8B"
+            android:onClick="AddCigToCounter"
+            android:text="+"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/timeAndDate"
+        android:layout_width="230dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="ewqeqwasd"
+        android:textAlignment="gravity"
+        android:textColor="#673AB7"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
