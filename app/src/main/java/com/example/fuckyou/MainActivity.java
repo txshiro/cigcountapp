@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         //we get shared preferences so we can save things
         sp = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
 
+
+
         CheckIfNewDay();
         checkifcigs();
     }
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     public void AddCigToCounter(View b) {
         //get text
         TextView quotesText = findViewById(R.id.quotes);
+        TextView lastCigTimeText = findViewById(R.id.lastCigTimeText);
 
         //change text of cigs counter to integer cigsCounter
         cigsCounter++;
@@ -83,9 +86,13 @@ public class MainActivity extends AppCompatActivity {
         //set random quote from the array
         quotesText.setText(quotesArr[number]);
 
-
         SharedPreferences.Editor editor = sp.edit();
         editor.putInt("AmountOfCigs", cigsCounter);
+        //editor.putLong("lastCigTime",lastCigTime);
+
+       // lastCigTimeText.setText(String.valueOf((currentTime);
+
+
         editor.apply();
 
         SetCigText();

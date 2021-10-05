@@ -60,11 +60,13 @@
         android:id="@+id/constraintLayout2"
         android:layout_width="97dp"
         android:layout_height="57dp"
+        android:layout_marginTop="33dp"
         android:layout_marginBottom="276dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/quotes"
         app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quotes">
 
         <Button
             android:id="@+id/AddCig"
@@ -87,7 +89,7 @@
         android:id="@+id/timeAndDate"
         android:layout_width="230dp"
         android:layout_height="39dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="72dp"
         android:gravity="center"
         android:text="ewqeqwasd"
         android:textAlignment="gravity"
@@ -137,6 +139,14 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.944" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/lastCigTimeText"
+        android:layout_width="228dp"
+        android:layout_height="27dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="67dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
