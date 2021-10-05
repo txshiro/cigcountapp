@@ -2,16 +2,15 @@ package com.example.fuckyou;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.net.ConnectException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -21,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
     SharedPreferences sp;
-
 
 
     int cigsCounter;
@@ -68,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void AddCigToCounter(View b) {
         //get text
-        TextView quotesText = (TextView) findViewById(R.id.quotes);
+        TextView quotesText = findViewById(R.id.quotes);
 
         //change text of cigs counter to integer cigsCounter
         cigsCounter++;
@@ -95,24 +93,24 @@ public class MainActivity extends AppCompatActivity {
 
         public void SetCigText()
         {
-            TextView cigsCount = (TextView) findViewById(R.id.cigsCount);
+            TextView cigsCount = findViewById(R.id.cigsCount);
             cigsCount.setText(String.valueOf(cigsCounter));
 
         }
 
         public void checkifcigs()
         {
-            if (!sp.contains("initialized")) {
-                SharedPreferences.Editor editor;
 
-                editor = sp.edit();
+            if (!sp.contains("initialized")) {
+
+                SharedPreferences.Editor editor = sp.edit();
 
                 //Indicate that the default shared prefs have been set
                 editor.putBoolean("initialized", true);
 
                 editor.putInt("AmountOfCigs", cigsCounter);
-
                 editor.apply();
+
             }else
             {
                 cigsCounter = sp.getInt("AmountOfCigs",-1);
@@ -125,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
         public void ResetCigCount()
         {
             SharedPreferences.Editor editor = sp.edit();
+
             editor.putInt("AmountOfCigs", 0);
             editor.apply();
 
@@ -148,4 +147,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        public void OpenStatsActivity(View v){
+            Intent i = new Intent(this, StatsPage.class);
+            startActivity(i);
+        }
 }
